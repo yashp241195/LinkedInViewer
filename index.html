@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkedIn Offline Files Viewer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      margin-top: 1rem;
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border: none;
+    }
+    #fileList .list-group-item {
+      white-space: normal;
+      word-break: break-word;
+      cursor: pointer;
+    }
+    .pagination-controls {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body class="container py-3">
+
+  <div class="row mb-3">
+    <div class="col-md-4 mb-2">
+      <select id="folderSelect" class="form-select"></select>
+    </div>
+    <div class="col-md-8 text-end">
+      <button id="prevBtn" class="btn btn-outline-primary btn-sm">&laquo; Prev</button>
+      <button id="nextBtn" class="btn btn-outline-primary btn-sm">Next &raquo;</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <ul id="fileList" class="list-group mb-2" style="max-height: 400px; overflow-y: auto;"></ul>
+      <div class="pagination-controls">
+        <button id="listPrevBtn" class="btn btn-sm btn-outline-secondary">&laquo; List Prev</button>
+        <button id="listNextBtn" class="btn btn-sm btn-outline-secondary">List Next &raquo;</button>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="iframe-wrapper">
+        <iframe id="viewer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="files_array.js"></script>
+  <script>
+    const cropTop = 460;
+    const cropBottom = 120;
+    const visibleHeight = 500;
+    const folderSelect = document.getElementById("folderSelect");
+    const fileList = document.getElementById("fileList");
+    const iframe = document.getElementById("viewer");
+
+    let currentFolderIndex = 0;
+    let currentFileIndex = 0;
+
+    // List pagination
+    const pageSize = 10;
+    let currentPage = 0;
+
+    function getFolderName(path) {
+      const parts = path.split("/");
+      return parts.length > 1 ? parts[parts.length - 2] : "Unknown";
+    }
+
+    function initFolders() {
+      filesArray.forEach((folder, idx) => {
+        if (!folder.length) return;
+        const opt = document.createElement("option");
+        opt.value = idx;
+        opt.textContent = getFolderName(folder[0]);
+        folderSelect.appendChild(opt);
+      });
+    }
+
+    function renderFileList(folderIndex) {
+      fileList.innerHTML = "";
+      const folder = filesArray[folderIndex];
+      const start = currentPage * pageSize;
+      const end = Math.min(start + pageSize, folder.length);
+
+      for (let idx = start; idx < end; idx++) {
+        const file = folder[idx];
+        const filename = file.split("/").pop().replace(/\.html$/i, "");
+        const li = document.createElement("li");
+        li.className = "list-group-item list-group-item-action";
+        li.textContent = filename;
+        li.onclick = () => loadFile(folderIndex, idx);
+        if (idx === currentFileIndex) li.classList.add("active");
+        fileList.appendChild(li);
+      }
+    }
+
+    function loadFile(folderIndex, fileIndex) {
+      const file = filesArray[folderIndex][fileIndex];
+      currentFolderIndex = folderIndex;
+      currentFileIndex = fileIndex;
+      currentPage = Math.floor(fileIndex / pageSize);
+
+      renderFileList(folderIndex);
+
+      iframe.src = file;
+      iframe.style.top = `-${cropTop}px`;
+      iframe.style.height = `calc(${visibleHeight}px + ${cropTop + cropBottom}px)`;
+    }
+
+    document.getElementById("prevBtn").onclick = () => {
+      const folder = filesArray[currentFolderIndex];
+      const newIndex = (currentFileIndex - 1 + folder.length) % folder.length;
+      loadFile(currentFolderIndex, newIndex);
+    };
+    document.getElementById("nextBtn").onclick = () => {
+      const folder = filesArray[currentFolderIndex];
+      const newIndex = (currentFileIndex + 1) % folder.length;
+      loadFile(currentFolderIndex, newIndex);
+    };
+
+    folderSelect.onchange = () => {
+      currentFolderIndex = parseInt(folderSelect.value, 10);
+      currentFileIndex = 0;
+      currentPage = 0;
+      renderFileList(currentFolderIndex);
+      loadFile(currentFolderIndex, currentFileIndex);
+    };
+
+    // Pagination buttons for the list
+    document.getElementById("listPrevBtn").onclick = () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderFileList(currentFolderIndex);
+      }
+    };
+    document.getElementById("listNextBtn").onclick = () => {
+      const folder = filesArray[currentFolderIndex];
+      if ((currentPage + 1) * pageSize < folder.length) {
+        currentPage++;
+        renderFileList(currentFolderIndex);
+      }
+    };
+
+    initFolders();
+    renderFileList(0);
+    loadFile(0, 0);
+  </script>
+
+</body>
+</html>
+
