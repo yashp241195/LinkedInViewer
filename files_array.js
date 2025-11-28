@@ -20,6 +20,7 @@ const filesArray = [
     "./Economy and Politics/Gandhi.html",
     "./Economy and Politics/Hindu_In_Pakistan.html",
     "./Economy and Politics/HistoricalPrideDelusion.html",
+    "./Economy and Politics/HistoryBookAurangzebIssue.html",
     "./Economy and Politics/Homebound.html",
     "./Economy and Politics/IndiaChinaStatsCompare.html",
     "./Economy and Politics/IndianEconomy1.html",
