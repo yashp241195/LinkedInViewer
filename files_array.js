@@ -6,6 +6,7 @@ const filesArray = [
     "./Economy and Politics/Anil-IAS-Problem2-PoliticalCorrectness.html",
     "./Economy and Politics/BengaluruTrafficSolution_Gamification_Probability.html",
     "./Economy and Politics/BiharPoverty.html",
+    "./Economy and Politics/BrahminicalPatriarchyVsConstitution.html",
     "./Economy and Politics/Climate.html",
     "./Economy and Politics/CommonSense.html",
     "./Economy and Politics/Corruption1_IslamicEmpire.html",
@@ -43,6 +44,7 @@ const filesArray = [
     "./Economy and Politics/Taliban.html",
     "./Economy and Politics/Terrorism.html",
     "./Economy and Politics/UrbanIndiaDataGenAI.html",
+    "./Economy and Politics/WhoAreIndianGenZ.html",
     "./Economy and Politics/WomenSafety.html",
   ],
   [
