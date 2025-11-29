@@ -83,6 +83,7 @@ const filesArray = [
     "./Education and Career/Shaktiman.html",
     "./Education and Career/TeachersDay.html",
     "./Education and Career/TherapyLimits.html",
+    "./Education and Career/UPSCInterviewProfVinayNangia.html",
     "./Education and Career/VC_SiliconValleyVsIndia.html",
     "./Education and Career/WhoAmI.html",
   ],
