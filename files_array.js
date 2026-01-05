@@ -25,11 +25,11 @@ const filesArray = [
     "./Economy and Politics/Feminist Eco 2 QuiJin & Mao Zedong .html",
     "./Economy and Politics/Feminist Eco 3 Deng Xioping & CareWork.html",
     "./Economy and Politics/Gandhi.html",
-    "./Economy and Politics/Gandhi, Savarkar and Jinnah - Part 1
+    "./Economy and Politics/Gandhi, Savarkar and Jinnah Part 1
 .html",
-    "./Economy and Politics/Gandhi, Savarkar and Jinnah - Part 2
+    "./Economy and Politics/Gandhi, Savarkar and Jinnah Part 2
 .html",
-    "./Economy and Politics/Gandhi, Savarkar and Jinnah - Part 3
+    "./Economy and Politics/Gandhi, Savarkar and Jinnah Part 3
 .html",
     "./Economy and Politics/Hindu_In_Pakistan.html",
     "./Economy and Politics/HistoricalPrideDelusion.html",
