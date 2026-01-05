@@ -44,6 +44,7 @@ const filesArray = [
     "./Economy and Politics/IndianITLabourLaw1NarayanMurthy70hours.html",
     "./Economy and Politics/IndianITLabourLaw2OlaSuicide.html",
     "./Economy and Politics/IPSPuranKrSuicide.html",
+    "./Economy and Politics/JavedAkhtarVsMuftiGod.html",
     "./Economy and Politics/Laddakh_SonamWangchuk.html",
     "./Economy and Politics/ManusmritiBurn&CasteOrigin.html",
     "./Economy and Politics/MarginalizedOppressionIndia.html",
