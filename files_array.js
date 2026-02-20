@@ -79,6 +79,7 @@ const filesArray = [
     "./Economy and Politics/VijenderChatGPTCasteBias.html",
     "./Economy and Politics/WhoAreIndianGenZ.html",
     "./Economy and Politics/WomenSafety.html",
+    "./Economy and Politics/ZeroUGC26ProtestCover.html",
   ],
   [
     "./Education and Career/90HourWork_CounterProductive.html",
