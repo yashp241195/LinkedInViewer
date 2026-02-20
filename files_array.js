@@ -1,5 +1,6 @@
 const filesArray = [
   [
+    "./Economy and Politics/AIGlobalSouthMNSrinivas.html",
     "./Economy and Politics/AnantAmbani & RTE 2009.html",
     "./Economy and Politics/AngelInvesting1.html",
     "./Economy and Politics/AngelInvesting2.html",
@@ -51,6 +52,7 @@ const filesArray = [
     "./Economy and Politics/ManusmritiBurn&CasteOrigin.html",
     "./Economy and Politics/MarginalizedOppressionIndia.html",
     "./Economy and Politics/MinorityRightsBangladeshHindu.html",
+    "./Economy and Politics/MisleadingCasteReforms.html",
     "./Economy and Politics/MJyotiCasteOppression.html",
     "./Economy and Politics/Nepal.html",
     "./Economy and Politics/Periyar.html",
@@ -61,6 +63,7 @@ const filesArray = [
     "./Economy and Politics/ReservationSocialismAndNehru.html",
     "./Economy and Politics/RightToQuestionReligionBRGavai.html",
     "./Economy and Politics/SabidoForCasteReligionInclusion.html",
+    "./Economy and Politics/SatiCasteSavarnaWomenPsyche.html",
     "./Economy and Politics/SavarkarFiles.html",
     "./Economy and Politics/SensitiveIssueWithoutControversy.html",
     "./Economy and Politics/SiliconValleyStartups1.html",
@@ -70,6 +73,7 @@ const filesArray = [
     "./Economy and Politics/Taliban.html",
     "./Economy and Politics/Terrorism.html",
     "./Economy and Politics/UnnaoRapeCase.html",
+    "./Economy and Politics/UpperCasteGeneralCategoryHindutva .html",
     "./Economy and Politics/UrbanIndiaDataGenAI.html",
     "./Economy and Politics/VictimBlamingRameshKumar.html",
     "./Economy and Politics/VijenderChatGPTCasteBias.html",
