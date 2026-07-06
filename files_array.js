@@ -13,6 +13,7 @@ const filesArray = [
     "./Economy and Politics/Caste Misinformation by Ravi Kapoor IRS.html",
     "./Economy and Politics/Census Estimates (With Caste) 2025.html",
     "./Economy and Politics/Civic Sense And Caste.html",
+    "./Economy and Politics/CJP - Anna 2.0 Mohit Congress .html",
     "./Economy and Politics/CJP & Female Participation.html",
     "./Economy and Politics/Climate.html",
     "./Economy and Politics/CommonSense.html",
